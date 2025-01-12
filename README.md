@@ -1,4 +1,4 @@
-# Docker Mailserver
+# Docker Mailserver - with podman quadlet conversion
 
 [![ci::status]][ci::github] [![docker::pulls]][docker::hub] [![documentation::badge]][documentation::web]
 
