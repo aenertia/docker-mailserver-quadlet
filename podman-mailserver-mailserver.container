@@ -1,0 +1,21 @@
+# podman-mailserver-mailserver.container
+[Container]
+ContainerName=mailserver
+EnvironmentFile=mailserver.env
+HealthCmd=ss --listening --tcp | grep -P 'LISTEN.+:smtp' || exit 1
+HealthRetries=0
+HealthTimeout=3s
+HostName=mail.example.com
+Image=ghcr.io/docker-mailserver/docker-mailserver:latest
+Pod=podman-mailserver.pod
+StopTimeout=60
+Volume=./docker-data/dms/mail-data/:/var/mail/
+Volume=./docker-data/dms/mail-state/:/var/mail-state/
+Volume=./docker-data/dms/mail-logs/:/var/log/mail/
+Volume=./docker-data/dms/config/:/tmp/docker-mailserver/
+Volume=/etc/localtime:/etc/localtime:ro
+
+[Service]
+Restart=always
+
+

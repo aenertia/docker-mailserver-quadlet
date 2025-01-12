@@ -1,0 +1,10 @@
+---
+
+# podman-mailserver.pod
+[Pod]
+PublishPort=25:25
+PublishPort=143:143
+PublishPort=465:465
+PublishPort=587:587
+PublishPort=993:993
+
